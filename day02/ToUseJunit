@@ -1,0 +1,15 @@
+1.需要加入依赖
+     <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.11</version>
+          <scope>test</scope>
+     </dependency>
+2.创建测试类
+    要在src/test/java目录下创建类
+3.创建测试方法
+    1）public 方法
+    2）没有返回值
+    3）方法名称自定义，建议是test+你要测试的方法的名称
+    4）方法没有参数
+    5）加注解@Test，这样的方法可以单独执行，不依赖main方法
