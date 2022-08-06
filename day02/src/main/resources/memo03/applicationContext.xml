@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--<bean id="mystudent" class="Spring_learning.day02.demo1.Student">
+          <property name = "name" value = "李嘉欣"/>
+                <property name = "age" value = "20"/>
+        </bean>-->
+        <!--引用类型-->
+        <bean id="myschool" class="Spring_learning.day02.demo3.School">
+            <property name="name" value="xiaoxue"/>
+            <property name="address" value="beijing"/>
+        </bean>
+        <!--name属性实现构造注入-->
+        <bean id="mystudent" class="Spring_learning.day02.demo3.Student">
+            <constructor-arg name = "name" value = "李嘉欣"/>
+            <constructor-arg name = "age" value = "20"/>
+            <constructor-arg name = "school" ref = "myschool"/>
+        </bean>
+        <!--index属性-->
+        <bean id="mystudent1" class="Spring_learning.day02.demo3.Student">
+            <constructor-arg index="0" value="鞠婧祎"/>
+            <constructor-arg index="1"  value = "20"/>
+            <constructor-arg index="2" ref = "myschool"/>
+        </bean>
+        <!--省略index-->
+        <bean id="mystudent2" class="Spring_learning.day02.demo3.Student">
+            <constructor-arg name = "name" value = "ziaozezhenzhu"/>
+            <constructor-arg name = "age" value = "25"/>
+            <constructor-arg name = "school" ref = "myschool"/>
+        </bean>
+        <!--<bean id="mydate" class="java.util.Date">
+            <property name = "time" value = "1234567899898"/>&lt;!&ndash;只要有set方法就可以这样赋值&ndash;&gt;
+        </bean>-->
+        <!--File注入-->
+        <bean id="myfile" class="java.io.File">
+            <constructor-arg value="day03"/>
+            <constructor-arg value="memo"/>
+        </bean>
+</beans>

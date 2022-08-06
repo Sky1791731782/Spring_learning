@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--<bean id="mystudent" class="Spring_learning.day02.demo1.Student">
+          <property name = "name" value = "李嘉欣"/>
+                <property name = "age" value = "20"/>
+        </bean>-->
+        <!--引用类型-->
+        <bean id="myschool" class="Spring_learning.day02.demo2.School">
+            <property name="name" value="xiaoxue"/>
+            <property name="address" value="beijing"/>
+        </bean>
+        <bean id="mystudent" class="Spring_learning.day02.demo2.Student">
+            <property name = "name" value = "李嘉欣"/>
+            <property name = "age" value = "20"/>
+            <property name = "school" ref = "myschool"/>
+        </bean>
+        <!--<bean id="mydate" class="java.util.Date">
+            <property name = "time" value = "1234567899898"/>&lt;!&ndash;只要有set方法就可以这样赋值&ndash;&gt;
+        </bean>-->
+        <!--声明student对象
+            注入就是赋值
+            简单类型：基本数据类型和String都是简单数据类型
+            di：给属性赋值
+            1.set注入（设置注入）：Spring调用类的set方法，在set方法中完成属性赋值
+               1）简单类型的set注入
+                需要有set方法；
+                   <bean id = "xx" class = “yy">
+                        <porperty name = "属性名字" value = "此属性的值"/>
+                        一个property语句只能给一个属性赋值
+                        本质上是调用set方法
+               2）引用类型注入:spring调用类的set方法
+                    <bena id = "xx" class = "yy">
+                        <property name = "属性名称" ref = "bean 的ID(对象的名称)"/>
+                    </bean>
+                   -->
+</beans>
